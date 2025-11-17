@@ -1,10 +1,10 @@
 # UTS Pemrograman Web 1
 
 * **Nama:** [Fauzy Adytyamaki Madhera]
-* 
 * **NIM:** [24090139]
 
 **Link GitHub Repository:** https://github.com/mackenzie414/UTS-FauzyAdytyamakiMadhera-24090139
+
 **Link GitHub Pages:** https://mackenzie414.github.io/UTS-FauzyAdytyamakiMadhera-24090139/
 
 Project ini adalah hasil konversi desain Figma menjadi website fungsional , dibuat untuk memenuhi Ujian Tengah Semester mata kuliah Pemrograman Web 1. Website ini dibangun menggunakan HTML, CSS, dan JavaScript dasar.
