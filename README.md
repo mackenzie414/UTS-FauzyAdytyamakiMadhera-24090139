@@ -1,1 +1,20 @@
-# UTS-Pemrograman-Web
+# UTS Pemrograman Web 
+Nama: FAUZY ADYTYAMAKI MADHERA
+NIM: 24090139
+Link GitHub Repository: 
+Link GitHub Pages: 
+
+Project ini adalah hasil konversi desain Figma menjadi website fungsional , dibuat untuk memenuhi Ujian Tengah Semester mata kuliah Pemrograman Web 1. Website ini dibangun menggunakan HTML, CSS, dan JavaScript dasar.
+
+# Fungsi Tiap Halaman:
+# Halaman Login (index.html):
+
+Berisi formulir untuk simulasi login (validasi email dan NIM).
+Setelah berhasil divalidasi, pengguna dialihkan (redirect) ke halaman Dashboard.
+Halaman Dashboard (dashboard.html):
+
+Menampilkan ringkasan data penting (summary cards) seperti Total Products, Total Sales, dan Total Revenue.
+Memiliki tombol navigasi cepat menuju halaman Daftar Produk.
+Halaman List Data Produk (products.html):
+
+Menampilkan data produk dalam bentuk tabel yang diambil dari array JavaScript. data produk secara dinamis menggunakan DOM dan array method.
