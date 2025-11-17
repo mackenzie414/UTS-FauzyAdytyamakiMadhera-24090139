@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-dark">
+
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand-small">FA</div>
+      <nav class="nav">
+        <a class="nav-item active" href="dashboard.html" title="Dashboard">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zM13 21h8V11h-8v10zM13 3v6h8V3h-8z"/></svg>
+        </a>
+        <a class="nav-item" href="products.html" title="Products">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </a>
+        <a class="nav-item" href="index.html" title="Logout">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M16 13v-2H7V8l-5 4 5 4v-3zM20 3h-8v2h8v14h-8v2h8a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/></svg>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <h1 class="page-title">Dashboard</h1>
+        <div class="top-actions">
+          <div class="search">
+            <input id="searchInput" placeholder="Cari produk..." />
+          </div>
+          <button class="btn ghost" onclick="location.href='products.html'">Lihat Produk</button>
+        </div>
+      </header>
+
+      <section class="grid two-col">
+        <div class="card summary">
+          <div class="row">
+            <div>
+              <p class="muted">Total Products</p>
+              <h2 id="totalProducts">0</h2>
+            </div>
+            <div class="circle-icon"><svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zM13 21h8V11h-8v10zM13 3v6h8V3h-8z"/></svg></div>
+          </div>
+        </div>
+
+        <div class="card summary">
+          <div class="row">
+            <div>
+              <p class="muted">Total Sales</p>
+              <h2 id="totalSales">0</h2>
+            </div>
+            <div class="circle-icon"><svg viewBox="0 0 24 24"><path d="M3 3h18v2H3V3zm0 6h18v2H3V9zm0 6h12v2H3v-2z"/></svg></div>
+          </div>
+        </div>
+
+        <div class="card wide">
+          <p class="muted">Revenue</p>
+          <h2 id="totalRevenue">Rp 0</h2>
+          <p class="muted small">Periode: Bulan ini</p>
+        </div>
+
+        <div class="card wide">
+          <p class="muted">Quick Actions</p>
+          <div class="actions">
+            <button class="btn" onclick="location.href='products.html'">Manage Products</button>
+            <button class="btn ghost" onclick="toast('Feature nanti diimplementasikan')">Export</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>Recent Products</h3>
+        <div class="table-wrap">
+          <table class="table" id="recentTable">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Harga</th>
+                <th>Stok</th>
+              </tr>
+            </thead>
+            <tbody id="recentBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <script src="js/script.js"></script>
+  <script>
+    // small extra: live-search for recent table
+    document.getElementById('searchInput').addEventListener('input', function(){
+      const q = this.value.toLowerCase();
+      const rows = document.querySelectorAll('#recentBody tr');
+      rows.forEach(r => {
+        const name = r.querySelector('td:nth-child(2)').textContent.toLowerCase();
+        r.style.display = name.includes(q) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>

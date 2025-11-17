@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Products</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-dark">
+
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand-small">FA</div>
+      <nav class="nav">
+        <a class="nav-item" href="dashboard.html" title="Dashboard">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zM13 21h8V11h-8v10zM13 3v6h8V3h-8z"/></svg>
+        </a>
+        <a class="nav-item active" href="products.html" title="Products">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </a>
+        <a class="nav-item" href="index.html" title="Logout">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M16 13v-2H7V8l-5 4 5 4v-3zM20 3h-8v2h8v14h-8v2h8a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/></svg>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <h1 class="page-title">Products</h1>
+        <div class="top-actions">
+          <button class="btn" onclick="openAddModal()">Tambah Produk</button>
+        </div>
+      </header>
+
+      <section class="card">
+        <div class="table-wrap">
+          <table class="table" id="productTable">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Produk</th>
+                <th>Harga</th>
+                <th>Stok</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="productBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Add / Edit Modal (simple) -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <h3 id="modalTitle">Tambah Produk</h3>
+      <label class="field"><span class="label-text">Nama</span><input id="mName" /></label>
+      <label class="field"><span class="label-text">Harga</span><input id="mPrice" type="number" min="0" /></label>
+      <label class="field"><span class="label-text">Stok</span><input id="mStock" type="number" min="0" /></label>
+      <div class="modal-actions">
+        <button class="btn" id="saveBtn">Simpan</button>
+        <button class="btn ghost" onclick="closeModal()">Batal</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <script src="js/script.js"></script>
+  <script>
+    // modal controls (wired to functions in script.js)
+    function openAddModal(){
+      openModal('add');
+    }
+  </script>
+</body>
+</html>
